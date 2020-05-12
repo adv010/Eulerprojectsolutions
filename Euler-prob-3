@@ -1,0 +1,21 @@
+def isprime(num):
+    for i in range(2,num):
+        if num%i==0:
+            return 0
+        else:
+            i+=1
+            
+    return 1
+            
+
+import math
+
+num = 600851475143
+
+max_possible_factor = math.floor(math.sqrt(num))
+
+for i in range(max_possible_factor,1,-1):
+    if num%i==0 and isprime(i):
+        greatest = i
+        break
+print(greatest)
